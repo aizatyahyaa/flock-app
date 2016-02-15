@@ -161,8 +161,14 @@ angular.module('starter.controllers', [])
 
     }])
 
-    .controller('FlockCtrl', ['$scope', '$cordovaGeolocation', '$ionicPlatform', '$rootScope', 'config', function($scope, $cordovaGeolocation, $ionicPlatform, $rootScope, config) {
+    .controller('FlockCtrl', ['$scope', '$cordovaGeolocation', '$ionicPlatform', '$rootScope', 'config', '$http', function($scope, $cordovaGeolocation, $ionicPlatform, $rootScope, config, $http) {
 
+        /*$http.get(config.domain + '/api/ceo')
+            .then(function(success) {
+                console.log(success);
+            }, function(error) {
+                console.log(error);
+            });*/
         $ionicPlatform.ready(function() {
 
             var posOptions = {

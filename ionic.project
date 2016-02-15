@@ -1,12 +1,4 @@
 {
   "name": "flock",
-  "app_id": "4a45df50",
-  "watchPatterns": [
-    "www/js/*",
-    "!www/css/**/*"
-  ],
-  "gulpStartupTasks": [
-    "sass",
-    "watch"
-  ]
+  "app_id": "4a45df50"
 }

@@ -15,13 +15,16 @@ angular.module('starter', ['ionic', 'satellizer', 'starter.controllers', 'ngCord
     })
 
     .constant('config', {
-        'domain': 'http://localhost:1337/localhost:8000',
-        'domain_local': 'http://localhost:8000',
+        // 'domain': 'http://localhost:1337/localhost:8000',
+        'domain': 'http://flock.coolcode.my',
+    // 'domain': 'http://localhost:8100/api',
+    // 'domain': 'http://ceo.myain.my',
     })
 
     .config(['$stateProvider', '$urlRouterProvider', '$authProvider', 'config', function($stateProvider, $urlRouterProvider, $authProvider, config) {
 
         $authProvider.loginUrl = config.domain + '/api/login/post';
+        // $authProvider.loginUrl = config.domain + '/login/post';
 
         $stateProvider
 
