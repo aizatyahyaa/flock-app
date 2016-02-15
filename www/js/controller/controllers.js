@@ -136,11 +136,12 @@ angular.module('starter.controllers', [])
         $http.get(config.domain + '/api/current/user')
             .then(function(success) {
                 // console.log(success.data.user);
-                $scope.user = success.data.user;
 
                 var user = JSON.stringify(success.data.user);
 
                 localStorage.setItem('user', user);
+
+                $scope.user = success.data.user;
 
             }, function(error) {
 
@@ -231,11 +232,16 @@ angular.module('starter.controllers', [])
 
     .controller('PlaceCtrl', ['$scope', '$http', 'config', function($scope, $http, config) {
 
-        $scope.delete = function(place) {
-            console.log(place);
+        $scope.delete = function(index, place) {
 
             $http.delete(config.domain + '/api/place/' + place.id)
                 .then(function(success) {
+                    $scope.user = JSON.parse(localStorage.getItem('user'));
+
+                    $scope.user.places.splice(index, 1);
+
+                    $scope.user.places.length = 0;
+
                     alert('Check-in deleted');
                 }, function(error) {
                     alert('An error has occured');

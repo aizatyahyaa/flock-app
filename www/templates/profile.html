@@ -2,7 +2,7 @@
     <ion-content class="profile-view">
         <div class="profile-header">
             <div class="row">
-                <div class="col col-40">
+                <div class="col col-20">
                     <img src="img/user.png" style="max-width: 100%">
                 </div>
                 <div class="col">
@@ -12,7 +12,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <h6 class="text-right profile-member">Member Since: {{ user.created_at }}</h6>
+                    <h6 class="text-right profile-member">Member Since: {{ user.date_human }}</h6>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
                 <ion-item href="#" ng-repeat="place in user.places">
                     <reverse-geocode lat="{{ place.lat }}" lng="{{ place.lng }}"></reverse-geocode>
                     <h3>{{ place.date_human }}</h3>
-                    <ion-option-button class="bg-primary" ng-click="delete(place)">
+                    <ion-option-button class="bg-primary" ng-click="delete($index, place)">
                         Delete
                     </ion-option-button>
                 </ion-item>
