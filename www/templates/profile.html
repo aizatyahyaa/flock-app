@@ -1,0 +1,42 @@
+<ion-view view-title="Profile" hide-back-button="true">
+    <ion-content class="profile-view">
+        <div class="profile-header">
+            <div class="row">
+                <div class="col col-40">
+                    <img src="img/user.png" style="max-width: 100%">
+                </div>
+                <div class="col">
+                    <h5 class="profile-name">{{ user.name }}</h5>
+                    <h6 class="profile-email">{{ user.email }}</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h6 class="text-right profile-member">Member Since: {{ user.created_at }}</h6>
+                </div>
+            </div>
+        </div>
+        <div class="profile-body">
+            <div class="row" ng-if="user.places.length">
+                <div class="col text-center">
+                    <p>Total Check-In: {{ user.places.length }}</p>
+                </div>
+            </div>
+            <div class="row" ng-if="!user.places.length">
+                <div class="col text-center">
+                    <i class="icon ion-sad-outline"></i>
+                    <p>There is no place you have visit yet.</p>
+                </div>
+            </div>
+            <ion-list can-swipe="true" ng-controller="PlaceCtrl">
+                <ion-item href="#" ng-repeat="place in user.places">
+                    <reverse-geocode lat="{{ place.lat }}" lng="{{ place.lng }}"></reverse-geocode>
+                    <h3>{{ place.date_human }}</h3>
+                    <ion-option-button class="bg-primary" ng-click="delete(place)">
+                        Delete
+                    </ion-option-button>
+                </ion-item>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>

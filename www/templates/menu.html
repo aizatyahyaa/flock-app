@@ -1,0 +1,38 @@
+<ion-side-menus>
+    <ion-pane ion-side-menu-content>
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button class="button-clear"><i class="icon ion-chevron-left"></i> Back</ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button menu-toggle="left" class="button button-icon icon ion-ios-more-outline"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menu-view" animation="slide-left-right"></ion-nav-view>
+    </ion-pane>
+    <ion-side-menu side="left">
+        <header class="bar bar-header bar-stable menu-header">
+            <h1 class="title">Menu</h1>
+        </header>
+        <ion-content class="has-header menu-body">
+            <ion-list>
+                <ion-item nav-clear menu-close href="#/menu/home">
+                    <i class="icon ion-ios-home-outline"></i> <span class="menu-text">Home</span>
+                </ion-item>
+                <ion-item nav-clear menu-close href="#/menu/profile">
+                    <i class="icon ion-ios-person-outline"></i> <span class="menu-text">Profile</span>
+                </ion-item>
+                <ion-item nav-clear menu-close href="#/menu/social">
+                    <i class="icon ion-ios-people-outline"></i> <span class="menu-text">Social</span>
+                </ion-item>
+                <ion-item nav-clear menu-close href="#/menu/flock">
+                    <i class="icon ion-ios-navigate-outline"></i> <span class="menu-text">Flock</span>
+                </ion-item>
+                <ion-item nav-clear menu-close ng-click="logout()">
+                    <i class="icon ion-log-out"></i> <span class="menu-text">Logout</span>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+        <ion-footer-bar align-title="left" class="menu-footer">
+            <h1 class="title">Login as {{ user.name }}</h1>
+        </ion-footer-bar>
+    </ion-side-menu>
+</ion-side-menus>

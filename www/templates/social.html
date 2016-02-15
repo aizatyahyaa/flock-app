@@ -1,0 +1,17 @@
+<ion-view view-title="Social" hide-back-button="true">
+	<ion-content>
+		<ion-list>
+			<ion-item href="#" ng-repeat="place in places" class="item-avatar">
+				<img src="img/user.png">
+				<span>{{ place.user.name }} at 
+					<strong>
+						<p>
+							<reverse-geocode lat="{{ place.lat }}" lng="{{ place.lng }}"></reverse-geocode>
+						</p>
+					</strong>
+				</span>
+				<p>{{ place.date_human }}</p>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>

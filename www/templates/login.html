@@ -1,0 +1,25 @@
+<ion-view view-title="Login" hide-back-button="true" hide-nav-bar="true" class="bg-primary">
+    <ion-content class="login-view" scroll="false">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col col-60">
+                <img src="img/flock.png">
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="list list-inset">
+            <label class="item item-input" ng-class="{ 'has-error':errors.email }">
+                <span class="input-label" ng-init="request.email='dev@flock.com'">Email</span>
+                <input type="text" ng-model="request.email">
+            </label>
+            <label class="item item-input" ng-class="{ 'has-error':errors.password }">
+                <span class="input-label" ng-init="request.password='dev123'">Password</span>
+                <input type="password" ng-model="request.password">
+            </label>
+        </div>
+        <div class="padding text-left">
+            <button class="button button-block button-submit" ng-click="login(request)">Sign In</button>
+			<p class="text-right">Don't have an account? <a ng-href="#/register">Sign Up</a></p>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,16 @@
+<div class="modal">
+    <ion-header-bar>
+        <h1 class="title">What are you doing here?</h1>
+        <div class="buttons">
+            <button class="button button-icon icon ion-ios-close-empty" ng-click="modal.hide()"></button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+            <label class="item item-input">
+                <textarea ng-model="request.comment" placeholder="Add your comment" rows="5"></textarea>
+            </label>
+        </div>
+        <button class="button button-block bg-primary" ng-click="addPlace(request)">Done</button>
+    </ion-content>
+</div>

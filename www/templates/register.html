@@ -1,0 +1,32 @@
+<ion-view view-title="Register" hide-back-button="true" hide-nav-bar="true" class="bg-primary">
+    <ion-content class="register-view" scroll="false">
+        <ion-header-bar align-title="left" style="background:transparent">
+            <a class="button button-icon" href="#/login"><i class="icon ion-android-arrow-back text-white-smoke"></i></a>
+        </ion-header-bar>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col col-40">
+                <img src="img/flock.png">
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="list list-inset">
+            <label class="item item-input" ng-class="{ 'has-error':errors.name }">
+                <span class="input-label" ng-init="request.name='kamaroolkarim'">Name</span>
+                <input type="text" ng-model="request.name">
+            </label>
+            <label class="item item-input" ng-class="{ 'has-error':errors.email }">
+                <span class="input-label" ng-init="request.email='k@gmail.com'">Email</span>
+                <input type="email" ng-model="request.email">
+            </label>
+            <label class="item item-input" ng-class="{ 'has-error':errors.password }">
+                <span class="input-label" ng-init="request.password='dev12345'">Password</span>
+                <input type="password" ng-model="request.password" placeholder="Must be greater than 5">
+            </label>
+        </div>
+        <div class="padding">
+            <button class="button button-block button-submit" ng-click="register(request)">Sign Up</button>
+            <p class="text-right">Already have an account? <a ng-href="#/login">Sign In</a></p>
+        </div>
+    </ion-content>
+</ion-view>
